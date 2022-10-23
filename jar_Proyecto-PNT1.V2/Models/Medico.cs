@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using static jar_Proyecto-PNT1.V2.Models.Validations;
+using static jar_Proyecto_PNT1.V2.Models.Validations;
 
-namespace jar_Proyecto-PNT1.V2.Models
+namespace jar_Proyecto_PNT1.V2.Models
 {
     public class Medico
     {

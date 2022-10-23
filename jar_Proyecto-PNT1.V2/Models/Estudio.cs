@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace jar_Proyecto-PNT1.V2.Models
+namespace jar_Proyecto_PNT1.V2.Models
 {
     public class Estudio //Los estudios desde el front no se van a poder manipular, los voy a usar para ofrecer los estudios disponibles
     {

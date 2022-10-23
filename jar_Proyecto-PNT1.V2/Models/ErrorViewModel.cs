@@ -1,6 +1,6 @@
 using System;
 
-namespace jar_Proyecto-PNT1.V2.Models
+namespace jar_Proyecto_PNT1.V2.Models
 {
     public class ErrorViewModel
     {
