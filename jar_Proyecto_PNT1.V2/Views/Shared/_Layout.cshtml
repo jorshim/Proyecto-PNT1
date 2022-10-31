@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - jar_Proyecto_PNT1.V2</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+   
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">jar_Proyecto_PNT1.V2</a>*@
+                @*<img src="~/images/527-5275271_naturopathy-services-health-medicine-herbalism-pharmacy-herbal-medicine.png" alt="Avatar Logo" style="width:60px;" class="rounded-pill img-fluid">*@
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action=""></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Paciente" asp-action="Index">Pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Medico" asp-action="Index">Medicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TurnoConsultaMedicas" asp-action="Index">Consulta Médica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TurnoPracticaMedicas" asp-action="Index">Práctica Médica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+            </ul>
+        </div>*@
+
+
+                <div class="container d-flex justify-content-center">
+                    <div class="row">
+
+                        <div class="col-12 d-flex justify-content-center mb-0">
+
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/images/527-5275271_naturopathy-services-health-medicine-herbalism-pharmacy-herbal-medicine.png" alt="Avatar Logo" style="width:60px;" class="rounded-pill img-fluid" draggable="false">
+                            </a>
+
+                        </div>
+                        <div class="mx-auto text-center">
+                            <h4> Clínica Rodriguez</h4>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav align-items-center mx-auto">
+
+                                    <li>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action=""></a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <strong> <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a></strong>
+                                    </li>
+                                    <li class="nav-item">
+                                        <strong> <a class="nav-link text-dark" asp-area="" asp-controller="Paciente" asp-action="Index">Pacientes</a></strong>
+                                    </li>
+                                    <li class="nav-item">
+                                        <strong>  <a class="nav-link text-dark" asp-area="" asp-controller="Medico" asp-action="Index">Medicos</a></strong>
+                                    </li>
+                                    <li class="nav-item">
+                                        <strong> <a class="nav-link text-dark" asp-area="" asp-controller="TurnoConsultaMedicas" asp-action="Index">Consulta Médica</a></strong>
+                                    </li>
+                                    <li class="nav-item">
+                                        <strong> <a class="nav-link text-dark" asp-area="" asp-controller="TurnoPracticaMedicas" asp-action="Index">Práctica Médica</a></strong>
+                                    </li>
+                                    @*<li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>*@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+    <br />
+    <br />
+    <br />
+    <div class="container my-5">
+        <footer class="bg-success bg-gradient">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <h4 class="mb-3" style="letter-spacing: 2px; color: ghostwhite;"><strong>Clínica Rodriguez</strong></h4>
+                        <p style="color: ghostwhite;">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                            voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h4 class="mb-3" style="letter-spacing: 2px; color: ghostwhite;"><strong>Enlaces</strong></h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-1">
+                                @*<a href="#!" style="color: black;">Frequently Asked Questions</a>*@
+                                <a style="color: black;" asp-area="" asp-controller="Paciente" asp-action="Index">Pacientes</a>
+                            </li>
+                            <li class="mb-1">
+                                @*<a href="#!" style="color: black;">Delivery</a>*@
+                                <a style="color: black;" asp-area="" asp-controller="Medico" asp-action="Index">Medicos</a>
+                            </li>
+                            <li class="mb-1">
+                                @*<a href="#!" style="color: black;">Pricing</a>*@
+                                <a style="color: black;" asp-area="" asp-controller="TurnoConsultaMedicas" asp-action="Index">Consulta Médica</a>
+                            </li>
+                            <li>
+                                @*<a href="#!" style="color: black;">Where we deliver?</a>*@
+                                <a style="color: black;" asp-area="" asp-controller="TurnoPracticaMedicas" asp-action="Index">Práctica Médica</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h4 class="mb-1" style="letter-spacing: 2px; color: ghostwhite;"><strong>Horarios de Atención</strong></h4>
+                        <table class="table" style="color: ghostwhite; border-color: ActiveBorder;">
+                            <tbody>
+                                <tr>
+                                    <td>Lunes - Viernes:</td>
+                                    <td>8am - 9pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Sábado - Domingo:</td>
+                                    <td>8am - 1am</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 Copyright:
+                @*<a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>*@
+                <a class="text-dark" asp-area="" asp-controller="Home" asp-action="Index">Clínica Rodriguez</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+
+        <!-- End of .container -->
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>

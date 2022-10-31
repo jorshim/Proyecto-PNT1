@@ -1,0 +1,91 @@
+﻿@model jar_Proyecto_PNT1.V2.Models.TurnoPracticaMedica
+
+@{
+    ViewData["Title"] = "Create";
+}
+@if (ViewBag.EsValido == true)
+{
+    <div class="alert alert-warning alert-danger fade show" role="alert">
+        <strong>Atención! @TempData["AlertMessage"]</strong>
+        @*<button type="button" class="btn-close" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" .alert-dismissible></button>*@
+    </div>}
+<section class="py-0 text-white">
+    <div class="container py-4 bg-success bg-gradient">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1>Prácticas Médicas</h1>
+                <p class="lead mb-0"><i>Sistema de gestión administrativa</i></p>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+
+
+<h4>Alta de Práctica Médica</h4>
+<hr />
+<h6 class="text-success">IMPORTANTE: La agenda de turnos se abre los lunes de cada semana, se agendan con un rango de semana a semana.</h6>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.IdPracticaMedica)
+                @*<label asp-for="Especialidad" class="control-label"></label>*@
+                <select asp-for="IdPracticaMedica" class="form-control" asp-items="Html.GetEnumSelectList<TipoEstudio>()">
+                    <option selected="selected" value="">Por favor seleccione</option>
+                </select>
+
+                @*<label asp-for="IdPracticaMedica" class="control-label"></label>
+                    <input asp-for="IdPracticaMedica" class="form-control" />
+                    <span asp-validation-for="IdPracticaMedica" class="text-danger"></span>*@
+
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="FechaConsultaMedica" class="control-label"></label>
+                    <input asp-for="FechaConsultaMedica" class="form-control" />
+                    <span asp-validation-for="FechaConsultaMedica" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                @Html.LabelFor(p => p.DocumentoPaciente)
+                @Html.TextBoxFor(p => p.DocumentoPaciente, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.DocumentoPaciente, "", new { @class = "text-danger" })
+                @*<label asp-for="DocumentoPaciente" class="control-label"></label>
+                    <input asp-for="DocumentoPaciente" class="form-control" />
+                    <span asp-validation-for="DocumentoPaciente" class="text-danger"></span>*@
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="IdPaciente" class="control-label"></label>
+                    <input asp-for="IdPaciente" class="form-control" />
+                    <span asp-validation-for="IdPaciente" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="DiasDisponibles" class="control-label"></label>
+                <select asp-for="DiasDisponibles" class="form-control" asp-items="Html.GetEnumSelectList<DiasDisponibles>()"> <option selected="selected" value="">Por favor seleccione</option></select>
+
+
+                <span asp-validation-for="DiasDisponibles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorasDisponibles" class="control-label"></label>
+                <select asp-for="HorasDisponibles" class="form-control" asp-items="Html.GetEnumSelectList<HorasDisponibles>()"> <option selected="selected" value="">Por favor seleccione</option></select>
+                <span asp-validation-for="HorasDisponibles" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

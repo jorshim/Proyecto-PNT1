@@ -1,0 +1,162 @@
+﻿@model IEnumerable<jar_Proyecto_PNT1.V2.Models.Paciente>
+
+@{
+    ViewData["Title"] = "Index";
+    Paginado paginado = new Paginado();
+    int pagNro = 0;
+
+    if (ViewBag.Paginado != null)
+    {
+        paginado = ViewBag.Paginado;
+        pagNro = paginado.CurrentPage;
+    }
+
+    string currentSearching = ViewBag.CurrentSearching;
+}
+
+<section class="py-0 text-white">
+    <div class="container py-4 bg-success bg-gradient">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1>Pacientes</h1>
+                <p class="lead mb-0"><i>Sistema de gestión administrativa</i></p>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary ">Crear un nuevo paciente</a>
+</p>
+<br />
+<p>
+    @using (@Html.BeginForm("Index", "Paciente", FormMethod.Get))
+    {
+        <b>Filtrar Pacientes por:</b>
+        @Html.TextBox("searching", "", new { placeholder = " Apellido o Documento", @class = "form-input" }) <input type="submit" value="Search" />
+
+      <a asp-action="Index" class="btn btn-outline-secondary">Ver todos los pacientes</a>
+    }
+</p>
+
+<table class="table table-hover table-bordered">
+    <thead class="table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaDeNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObraSocial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NroAfiliado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoElectronico)
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="4" class="text-danger">
+                    No se encontraron resultados para la búsqueda realizada.
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaDeNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ObraSocial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NroAfiliado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CorreoElectronico)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-outline-warning btn-sm btn "title="Editar"> 
+                            <i class="fas fa-edit"></i>
+                         </a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-outline-info btn-sm btn " title="Detalles">
+                            <i class="fas fa-info-circle"></i>
+                            </a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-outline-danger btn-sm btn " title="Eliminar">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+
+
+
+                        @*<a asp-action="Edit" asp-route-id="@item.Id" class="btn-outline-primary btn-sm btn ">Editar </a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-outline-primary btn-sm btn ">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-outline-danger btn-sm btn ">Eliminar</a>*@
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div class="container">
+
+    @if (paginado.TotalPages > 0)
+    {
+<ul class="pagination justify-content-end">
+    @if (paginado.CurrentPage > 1)
+    {
+<li class="page-item">
+    <a class="page-link" asp-controller="Paciente" asp-action="Index" asp-route-searching="@(currentSearching)" asp-route-pg="1">Primero</a>
+    <a class="page-link" asp-controller="Paciente" asp-action="Index" asp-route-searching="@(currentSearching)" asp-route-pg="@(paginado.CurrentPage-1)">Anterior</a>
+</li>}
+    @for (var pag = paginado.StartPage; pag <= paginado.EndPage; pag++)
+    {
+<li class="page-item @(pag==paginado.CurrentPage ? "active" : "")">
+    <a class="page-link" asp-controller="Paciente" asp-action="Index" asp-route-searching="@(currentSearching)" asp-route-pg="@pag">@pag</a>
+</li>}
+    @if (paginado.CurrentPage < paginado.TotalPages)
+    {
+<li class="page-item">
+    <a class="page-link" asp-controller="Paciente" asp-action="Index" asp-route-searching="@(currentSearching)" asp-route-pg="@(paginado.CurrentPage+1)">Siguiente</a>
+    <a class="page-link" asp-controller="Paciente" asp-action="Index" asp-route-searching="@(currentSearching)" asp-route-pg="@(paginado.TotalPages)">Ultimo</a>
+</li>}
+</ul>}
+</div>

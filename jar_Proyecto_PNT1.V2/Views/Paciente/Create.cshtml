@@ -1,0 +1,107 @@
+﻿@model jar_Proyecto_PNT1.V2.Models.Paciente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="py-0 text-white">
+    <div class="container py-4 bg-success bg-gradient">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1>Pacientes</h1>
+                <p class="lead mb-0"><i>Sistema de gestión administrativa</i></p>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+
+
+
+
+<h4>Alta de Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Documento)
+                @Html.TextBoxFor(p => p.Documento, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Documento, "", new { @class = "text-danger" })
+                @*<label asp-for="Documento" class="control-label"></label>
+                    <input asp-for="Documento" class="form-control" />
+                    <span asp-validation-for="Documento" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Nombre)
+                @Html.TextBoxFor(p => p.Nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Nombre, "", new { @class = "text-danger" })
+                @*<label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Apellido)
+                @Html.TextBoxFor(p => p.Apellido, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Apellido, "", new { @class = "text-danger" })
+                @*<label asp-for="Apellido" class="control-label"></label>
+                    <input asp-for="Apellido" class="form-control" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.FechaDeNacimiento)
+                @*@Html.TextBoxFor(p => p.FechaDeNacimiento, "", new { @class = "form-control" })*@
+                <input asp-for="FechaDeNacimiento" class="form-control" />
+                @Html.ValidationMessageFor(p => p.FechaDeNacimiento, "", new { @class = "text-danger" })
+                @*<label asp-for="FechaDeNacimiento" class="control-label"></label>*@
+
+                @*<span asp-validation-for="FechaDeNacimiento" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.ObraSocial)
+                @Html.TextBoxFor(p => p.ObraSocial, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.ObraSocial, "", new { @class = "text-danger" })
+                @*<label asp-for="ObraSocial" class="control-label"></label>
+                    <input asp-for="ObraSocial" class="form-control" />
+                    <span asp-validation-for="ObraSocial" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.NroAfiliado)
+                @Html.TextBoxFor(p => p.NroAfiliado, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.NroAfiliado, "", new { @class = "text-danger" })
+                @*<label asp-for="NroAfiliado" class="control-label"></label>
+                    <input asp-for="NroAfiliado" class="form-control" />
+                    <span asp-validation-for="NroAfiliado" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Telefono)
+                @Html.TextBoxFor(p => p.Telefono, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Telefono, "", new { @class = "text-danger" })
+                @*<label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" class="form-control" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.CorreoElectronico)
+                @Html.TextBoxFor(p => p.CorreoElectronico, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.CorreoElectronico, "", new { @class = "text-danger" })
+                @*<label asp-for="CorreoElectronico" class="control-label"></label>
+                    <input asp-for="CorreoElectronico" class="form-control" />
+                    <span asp-validation-for="CorreoElectronico" class="text-danger"></span>*@
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

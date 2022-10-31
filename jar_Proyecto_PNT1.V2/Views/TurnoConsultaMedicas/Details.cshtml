@@ -1,0 +1,67 @@
+﻿@model jar_Proyecto_PNT1.V2.Models.TurnoConsultaMedica
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="py-0 text-white">
+    <div class="container py-4 bg-success bg-gradient">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1>Consultas Médicas</h1>
+                <p class="lead mb-0"><i>Sistema de gestión administrativa</i></p>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+
+<h4>Detalles del turno Consulta Médica</h4>
+<br />
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdMedico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdMedico)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaConsultaMedica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaConsultaMedica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DocumentoPaciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DocumentoPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdPaciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiasDisponibles)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiasDisponibles)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HorasDisponibles)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HorasDisponibles)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Volver a la lista</a>
+</div>
