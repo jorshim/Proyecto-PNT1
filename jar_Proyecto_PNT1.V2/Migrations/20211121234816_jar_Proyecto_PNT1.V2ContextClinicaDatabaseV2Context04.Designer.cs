@@ -10,8 +10,8 @@ using jar_Proyecto_PNT1.V2.Context;
 namespace jar_Proyecto_PNT1.V2.Migrations
 {
     [DbContext(typeof(ClinicaDatabaseV2Context))]
-    [Migration("20211121234816_mnh_ProyectoV2ContextClinicaDatabaseV2Context04")]
-    partial class mnh_ProyectoV2ContextClinicaDatabaseV2Context04
+    [Migration("20211121234816_jar_Proyecto_PNT1.V2ContextClinicaDatabaseV2Context04")]
+    partial class jar_Proyecto_PNT1V2ContextClinicaDatabaseV2Context04
     {
         protected  void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -171,3 +171,4 @@ namespace jar_Proyecto_PNT1.V2.Migrations
         }
     }
 }
+
